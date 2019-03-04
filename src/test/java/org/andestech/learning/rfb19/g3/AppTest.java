@@ -1,10 +1,7 @@
 package org.andestech.learning.rfb19.g3;
 
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -36,6 +33,10 @@ public class AppTest
     {
         wd = new ChromeDriver();
         wd.get("http://andestech.org/learning/rfb18/");
+
+
+        wd.manage().window().setSize(new Dimension(800,400));
+        wd.manage().window().setPosition(new Point(0,0));
 
         wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
