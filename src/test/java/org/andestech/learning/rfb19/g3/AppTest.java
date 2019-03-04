@@ -44,6 +44,7 @@ public class AppTest
         System.out.println(el.getCssValue("background-color"));
 
         el = wd.findElement(By.linkText("Home"));
+        // Цвета и размеры нормализуются!!
         System.out.println("bc: " + el.getCssValue("background-color"));
         System.out.println("c: " + el.getCssValue("color"));
         System.out.println("fs: " + el.getCssValue("font-size"));
