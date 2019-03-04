@@ -7,7 +7,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -104,8 +103,6 @@ public class AppTest
         Thread.sleep(3000);
 
        // wd.switchTo().window();
-
-
     }
 
 
