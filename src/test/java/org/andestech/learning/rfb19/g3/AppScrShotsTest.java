@@ -3,6 +3,8 @@ package org.andestech.learning.rfb19.g3;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -75,13 +77,46 @@ public class AppScrShotsTest
         Select select = new Select(selector);
 
         select.selectByVisibleText("безработный");
-        Thread.sleep(1500);
+        Thread.sleep(200);
 
         select.selectByValue("stu");
-        Thread.sleep(1500);
+        Thread.sleep(200);
 
         select.selectByIndex(0);
-        Thread.sleep(1500);
+        Thread.sleep(200);
+
+        wd.findElement(By.linkText("Home")).click();
+
+        WebElement slider = wd.findElement(By.id("price"));
+
+        Actions actions = new Actions(wd);
+
+        actions.moveToElement(slider,0,0).click();
+
+//        Action act =
+//        actions.sendKeys(Keys.ARROW_RIGHT).sendKeys(Keys.ARROW_RIGHT).
+//                sendKeys(Keys.ARROW_RIGHT).
+//                sendKeys(Keys.ARROW_RIGHT).build();
+//
+//        act.perform();
+
+        int i;
+        for (i = 0; i<20; i++)
+        {
+            actions.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(100);
+        }
+
+        for (; i>0; i--)
+        {
+            actions.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(100);
+        }
+
+
+        Thread.sleep(3000);
+
+
 
 
 
